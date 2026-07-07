@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pebble Clock</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="settings" class="hidden">
+    <div class="panel">
+      <button id="settings-close" aria-label="Close">&#10005;</button>
+      <h2>Settings</h2>
+
+      <label class="section">Time</label>
+      <div class="row time-row">
+        <input id="set-hour" type="number" min="1" max="12" value="09" />
+        <span class="sep">:</span>
+        <input id="set-min" type="number" min="0" max="59" value="41" />
+        <div class="select-wrap ampm">
+          <select id="set-ampm">
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="section">Date</label>
+      <div class="row date-row">
+        <div class="select-wrap month">
+          <select id="set-month">
+            <option value="1">Jan</option><option value="2">Feb</option>
+            <option value="3">Mar</option><option value="4">Apr</option>
+            <option value="5">May</option><option value="6">Jun</option>
+            <option value="7">Jul</option><option value="8">Aug</option>
+            <option value="9">Sep</option><option value="10">Oct</option>
+            <option value="11">Nov</option><option value="12">Dec</option>
+          </select>
+        </div>
+        <input id="set-day" type="number" min="1" max="31" value="07" />
+        <span class="sep">,</span>
+        <input id="set-year" type="number" min="1970" max="2100" value="2025" />
+      </div>
+
+      <label class="section">Time Zone</label>
+      <div class="select-wrap full">
+        <select id="set-tz"></select>
+      </div>
+
+      <label class="section">Time Format</label>
+      <div class="segmented">
+        <button id="fmt-12" class="active" type="button">12 Hour</button>
+        <button id="fmt-24" type="button">24 Hour</button>
+      </div>
+
+      <button id="settings-save" type="button">Save</button>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

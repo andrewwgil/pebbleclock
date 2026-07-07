@@ -1,0 +1,171 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+#scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+#scene.dragging {
+  cursor: grabbing;
+}
+
+/* ---- Settings popup ---- */
+#settings {
+  position: fixed;
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#settings.hidden {
+  display: none;
+}
+
+#settings .panel {
+  width: 300px;
+  background: #f7f6f3;
+  border-radius: 22px;
+  padding: 24px;
+  position: relative;
+  box-shadow:
+    0 24px 60px rgba(80, 70, 55, 0.16),
+    0 4px 14px rgba(80, 70, 55, 0.06);
+}
+
+#settings h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+  color: #3c3a36;
+}
+
+#settings-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  background: none;
+  border: none;
+  padding: 4px;
+  font-size: 15px;
+  line-height: 1;
+  color: #8f8b84;
+  cursor: pointer;
+}
+
+#settings .section {
+  display: block;
+  font-size: 13px;
+  color: #8f8b84;
+  margin: 16px 0 8px;
+}
+
+#settings .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#settings input,
+#settings select {
+  box-sizing: border-box;
+  background: #edeae5;
+  border: none;
+  border-radius: 12px;
+  height: 44px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #55524c;
+  text-align: center;
+  outline: none;
+  width: 100%;
+}
+
+#settings input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#settings input::-webkit-outer-spin-button,
+#settings input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#settings .sep {
+  color: #8f8b84;
+  flex: none;
+}
+
+#settings .select-wrap {
+  position: relative;
+  width: 100%;
+}
+
+#settings .select-wrap.ampm {
+  flex: none;
+  width: 88px;
+}
+
+#settings .select-wrap select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0 28px 0 14px;
+  text-align: left;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' stroke='%238f8b84' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+#settings .segmented {
+  display: flex;
+  background: #edeae5;
+  border-radius: 12px;
+  padding: 3px;
+}
+
+#settings .segmented button {
+  flex: 1;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  color: #8f8b84;
+  cursor: pointer;
+}
+
+#settings .segmented button.active {
+  background: #ffffff;
+  color: #4a4741;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#settings-save {
+  width: 100%;
+  margin-top: 22px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  background: #e7e3dc;
+  font-size: 15px;
+  font-family: inherit;
+  color: #55524c;
+  cursor: pointer;
+}
+
+#settings-save:active {
+  background: #ddd8cf;
+}
