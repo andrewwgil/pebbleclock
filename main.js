@@ -18,12 +18,12 @@ scene.background = new THREE.Color(0xffffff);
 // Default zoom scales with aspect so all clocks stay in frame
 function homeZoom() {
   const aspect = window.innerWidth / window.innerHeight;
-  return THREE.MathUtils.clamp(10.8 / (Math.tan((16 * Math.PI) / 180) * aspect), 14, 30);
+  return THREE.MathUtils.clamp(6.7 / (Math.tan((16 * Math.PI) / 180) * aspect), 8.5, 24);
 }
 
 const camera = new THREE.PerspectiveCamera(32, window.innerWidth / window.innerHeight, 0.1, 50);
-camera.position.set(0, 0.35, homeZoom());
-camera.lookAt(0, -0.05, 0);
+camera.position.set(-0.22, 0.15, homeZoom());
+camera.lookAt(-0.22, 0, 0);
 
 // Image-based lighting for realistic materials
 const pmrem = new THREE.PMREMGenerator(renderer);
@@ -1086,11 +1086,11 @@ function makeClock(body, x, scale) {
   return spinGroup;
 }
 
-const metalClock = makeClock(metalBody, -5.25, 0.70);
-const stoneClock = makeClock(stoneBody, -2.625, 0.66);
-const flipClock = makeClock(flipBody, 0, 0.82);
-const discClock = makeClock(discBody, 2.625, 0.72);
-const ledClock = makeClock(ledBody, 5.25, 0.84);
+const metalClock = makeClock(metalBody, -4.7, 0.78);
+const stoneClock = makeClock(stoneBody, -2.35, 0.74);
+const flipClock = makeClock(flipBody, 0, 0.90);
+const discClock = makeClock(discBody, 2.35, 0.80);
+const ledClock = makeClock(ledBody, 4.7, 0.92);
 const clocks = [metalClock, stoneClock, flipClock, discClock, ledClock];
 
 let focusedClock = null;
